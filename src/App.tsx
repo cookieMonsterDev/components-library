@@ -1,8 +1,9 @@
+import { TextInput } from "@components/TextInput";
 
 function App() {
   return (
-    <div className="test">dfsdfsd
-      <></>
+    <div className="page_wrapper">
+      <TextInput placeholder="test" />
     </div>
   );
 }
