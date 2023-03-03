@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { InputsPage } from './Inputs.page';
 
 export default {
-  title: 'Pages',
+  title: 'Pages/Inputs',
   component: InputsPage,
 } as ComponentMeta<typeof InputsPage>;
 

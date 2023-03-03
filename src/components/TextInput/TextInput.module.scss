@@ -58,8 +58,10 @@
   &_active {
     .label {
       top: -10px;
-      font-size: 12px;
-      line-height: 16px;
+      > p {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
 

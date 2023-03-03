@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './TextInput.module.scss';
 import { TextInputProps } from './TextInput.types';
 import { IconsEnum, SvgIcon } from '@components/SvgIcon';
+import { Text, TextVariantsEnum } from '@components/Text';
 
 export const TextInputComponent: React.FC<TextInputProps> = ({
   id,
@@ -20,14 +21,17 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
   const [show, setShow] = useState(type === 'password' ? false : true);
   const [focus, setFocus] = useState(false);
 
-  const InputClass = classNames(styles.input, {
-    [styles[`input_focus`]]: focus,
-    [styles[`input_active`]]: ref.current?.value || focus || value,
-    [styles[`input_error`]]: errorText,
-    [styles[`input_icon`]]: type === 'password',
-    [styles[`input_diretion_${direction}`]]: direction,
-  },
-  className);
+  const InputClass = classNames(
+    styles.input,
+    {
+      [styles[`input_focus`]]: focus,
+      [styles[`input_active`]]: ref.current?.value || focus || value,
+      [styles[`input_error`]]: errorText,
+      [styles[`input_icon`]]: type === 'password',
+      [styles[`input_diretion_${direction}`]]: direction,
+    },
+    className
+  );
 
   const handlePassword = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -57,8 +61,16 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
           />
         </span>
       )}
-      {placeholder && <label className={styles.label}>{placeholder}</label>}
-      {errorText && <label className={styles.errorText}>{errorText}</label>}
+      {placeholder && (
+        <label className={styles.label}>
+          <Text variant={TextVariantsEnum.Body_L}>{placeholder}</Text>
+        </label>
+      )}
+      {errorText && (
+        <label className={styles.errorText}>
+          <Text variant={TextVariantsEnum.Caption}>{placeholder}</Text>
+        </label>
+      )}
     </div>
   );
 };

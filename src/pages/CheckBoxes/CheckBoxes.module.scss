@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, 20px);
+  grid-auto-flow: row-reverse;
+  padding: 10px;
+  margin: 10px;
+  border: 2px dashed var(--purple);
+}
+
+.radios {
+  display: grid;
+  gap: 4px;
+  grid-template-rows: repeat(3, auto);
+  border: 2px dashed var(--purple);
+  padding: 10px;
+  margin: 10px;
+}

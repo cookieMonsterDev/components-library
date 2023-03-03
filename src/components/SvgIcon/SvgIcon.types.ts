@@ -2,6 +2,7 @@ export enum IconsEnum {
   loader = 'src/assets/icons/common/loader.svg',
   search = 'src/assets/icons/common/search.svg',
   hideShow = 'src/assets/icons/common/hideShow.svg',
+  checkMark = 'src/assets/icons/common/checkMark.svg'
 }
 
 export type SvgIconProps = {

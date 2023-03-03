@@ -1,0 +1,97 @@
+.checkBox {
+
+  > input {
+    cursor: pointer;
+  }
+
+  &_variant {
+    &_round {
+      > input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        appearance: none;
+        margin: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--ultra-light-gray);
+        border-radius: 50%;
+      
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          transform: scale(0);
+          border-radius: 50%;
+          background: var(--primary);
+          transition: 120ms transform ease-in-out;
+        }
+
+        &:checked {
+          border-color: var(--primary);
+        
+          &::before {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &_square {
+      position: relative;
+      width: 19px;
+      height: 19px;
+
+      > input {
+        display: grid;
+        place-content: center;
+        appearance: none;
+        margin: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--ultra-light-gray);
+        border-radius: 5px;
+        transition: all 120ms ease-in-out;
+
+        &:checked {
+          border-color: var(--primary);
+          background: var(--primary);
+        }
+      }
+    }
+
+    &_toggle {
+      > input {
+        position: relative;
+        appearance: none;
+        margin: 0;
+        width: 34px;
+        height: 16px;
+        border-radius: 16px;
+        background: var(--ultra-light-gray);
+      
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: var(--white);
+          transform: translate(-145%, -50%);
+          transition: 180ms transform ease-in-out;
+        }
+
+        &:checked {
+          background: var(--primary);
+        
+          &::before {
+            transform: translate(45%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+.container {
+  border: 2px dashed var(--purple);
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: row;
+  padding: 40px;
+  
+  > legend {
+    color: var(--purple)
+  }
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: baseline;
+
+  &:nth-of-type(1) {
+    justify-items: center;
+  }
+}
+
+.firstItem {
+  justify-self: flex-start;
+}

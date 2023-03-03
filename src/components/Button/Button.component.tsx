@@ -1,10 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import { SvgIcon, IconsEnum } from '@components/SvgIcon';
-
+import { Text, TextVariantsEnum } from '@components/Text';
 import { ButtonProps } from './Button.types';
-
 import styles from './Button.module.scss';
 
 export const ButtonComponent: React.FC<ButtonProps> = ({
@@ -48,7 +46,7 @@ export const ButtonComponent: React.FC<ButtonProps> = ({
         <SvgIcon src={IconsEnum.loader} size={30} />
       </div>
       {icon && <SvgIcon src={icon} size={20} />}
-      {text && <span>{text}</span>}
+      {text && <Text variant={TextVariantsEnum.Body_L}>{text}</Text>}
     </button>
   );
 };
