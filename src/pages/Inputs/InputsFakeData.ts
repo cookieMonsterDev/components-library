@@ -1,52 +1,50 @@
 import {
-  TextInputProps,
-  TextInputVariantEnum,
-  TextInputDirectionEnum,
+  TextInputProps
 } from '@components/TextInput';
 
 export const data: TextInputProps[] = [
   {
-    type: TextInputVariantEnum.text,
+    type: 'text',
     placeholder: 'Введіть пошту',
   },
   {
-    type: TextInputVariantEnum.text,
-    placeholder: 'Введіть пошту',
-    value: 'test@mail.com',
-  },
-  {
-    type: TextInputVariantEnum.text,
+    type: 'text',
     placeholder: 'Введіть пошту',
     value: 'test@mail.com',
-    errorText: 'Введіть коректну пошту',
   },
   {
-    type: TextInputVariantEnum.text,
+    type: 'text',
     placeholder: 'Введіть пошту',
     value: 'test@mail.com',
     errorText: 'Введіть коректну пошту',
-    direction: TextInputDirectionEnum.rtl,
   },
   {
-    type: TextInputVariantEnum.password,
+    type: 'text',
+    placeholder: 'Введіть пошту',
+    value: 'test@mail.com',
+    errorText: 'Введіть коректну пошту',
+    direction: 'rtl',
+  },
+  {
+    type: 'password',
     placeholder: 'Введіть пароль',
   },
   {
-    type: TextInputVariantEnum.password,
+    type: 'password',
     placeholder: 'Введіть пароль',
     value: 'Test_123',
   },
   {
-    type: TextInputVariantEnum.password,
+    type: 'password',
     placeholder: 'Введіть пароль',
     value: 'Test_123',
     errorText: 'Пароль занадто короткий',
   },
   {
-    type: TextInputVariantEnum.password,
+    type: 'password',
     placeholder: 'Введіть пароль',
     value: 'Test_123',
     errorText: 'Пароль занадто короткий',
-    direction: TextInputDirectionEnum.rtl,
+    direction: 'rtl'
   },
 ];

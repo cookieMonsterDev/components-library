@@ -1,22 +1,14 @@
-export enum TextInputVariantEnum {
-  text = 'text',
-  password = 'password',
-}
-
-export enum TextInputDirectionEnum {
-  rtl = 'rtl',
-  ltr = 'ltr',
-}
-
 export type TextInputProps = {
   id?: string;
   name?: string;
   value?: any;
-  type?: TextInputVariantEnum;
-  direction?: TextInputDirectionEnum;
+  type?: 'text' | 'password';
+  direction?: 'rtl' | 'ltr';
   placeholder?: string;
   errorText?: string;
   className?: string;
   style?: React.CSSProperties;
+  icon?: React.ReactNode;
+  ref?: React.MutableRefObject<HTMLInputElement | null>
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | undefined;
 };

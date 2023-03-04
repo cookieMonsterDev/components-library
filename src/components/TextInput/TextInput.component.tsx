@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './TextInput.module.scss';
 import { TextInputProps } from './TextInput.types';
-import { IconsEnum, SvgIcon } from '@components/SvgIcon';
 import { Text, TextVariantsEnum } from '@components/Text';
 
 export const TextInputComponent: React.FC<TextInputProps> = ({
@@ -15,17 +14,19 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
   direction = 'ltr',
   style,
   className,
+  icon,
+  ref,
   onChange,
 }) => {
-  const ref = useRef<HTMLInputElement | null>(null);
-  const [show, setShow] = useState(type === 'password' ? false : true);
+  const valueRef = useRef<any | null>(null);
+  const containerRef = useRef<HTMLInputElement | null>(null);
   const [focus, setFocus] = useState(false);
 
   const InputClass = classNames(
     styles.input,
     {
       [styles[`input_focus`]]: focus,
-      [styles[`input_active`]]: ref.current?.value || focus || value,
+      [styles[`input_active`]]: valueRef.current || focus || value,
       [styles[`input_error`]]: errorText,
       [styles[`input_icon`]]: type === 'password',
       [styles[`input_diretion_${direction}`]]: direction,
@@ -33,34 +34,49 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
     className
   );
 
-  const handlePassword = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-    setShow((prev) => !prev);
-    ref.current?.focus();
+  const handleChenge = (event: React.ChangeEvent<HTMLInputElement>) => {
+    valueRef.current = event.target.value;
+    onChange && onChange(event);
   };
 
+  const handleClickInside = () => setFocus(true);
+
+  const handleClickOutside = () => setFocus(false);
+
+  useEffect(() => {
+    const listener = (event: Event) => {
+      const el = containerRef?.current;
+      if (!el || el.contains((event?.target as Node) || null)) {
+        return;
+      }
+      handleClickOutside();
+    };
+
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [containerRef, handleClickOutside]);
+
   return (
-    <div className={InputClass} style={style}>
+    <div
+      className={InputClass}
+      style={style}
+      onClick={handleClickInside}
+      ref={containerRef}
+    >
       <input
         id={id}
         name={name}
-        onChange={onChange}
+        onChange={handleChenge}
         value={value}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
         ref={ref}
-        type={show ? 'text' : 'password'}
+        type={type}
       />
-      {type === 'password' && (
-        <span className={styles.icon}>
-          <SvgIcon
-            src={IconsEnum.hideShow}
-            size={18}
-            color={'ultra-light-gray'}
-            onClick={handlePassword}
-          />
-        </span>
-      )}
+      {icon && <span className={styles.icon}>{icon}</span>}
       {placeholder && (
         <label className={styles.label}>
           <Text variant={TextVariantsEnum.Body_L}>{placeholder}</Text>

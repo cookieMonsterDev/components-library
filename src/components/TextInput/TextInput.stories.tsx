@@ -1,6 +1,6 @@
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TextInput, TextInputProps, TextInputVariantEnum } from '.';
+import { TextInput, TextInputProps } from '.';
 
 export default {
   title: 'Components/Input',
@@ -12,6 +12,6 @@ const Template: ComponentStory<typeof TextInput> = (args: TextInputProps) => <Te
 export const input = Template.bind({});
 
 input.args = {
-  type: TextInputVariantEnum.text,
+  type: 'text',
   placeholder: 'Some text',
 };
