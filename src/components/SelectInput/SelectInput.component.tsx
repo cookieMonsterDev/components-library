@@ -1,15 +1,11 @@
 import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import { SelectInputProps } from './SelectInput.types';
-import Select, {
-  components,
-  DropdownIndicatorProps,
-  StylesConfig,
-} from 'react-select';
+import Select, { StylesConfig } from 'react-select';
 import styles from './SelectInput.module.scss';
 import { Text, TextVariantsEnum } from '@components/Text';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-import { IconsEnum, SvgIcon } from '@components/SvgIcon';
+import Indicator from './Indicator.compoent';
 
 export const SelectInputComponent: React.FC<SelectInputProps> = ({
   id,
@@ -24,7 +20,8 @@ export const SelectInputComponent: React.FC<SelectInputProps> = ({
   className,
   style,
   selectStyles,
-  direction,
+  direction = 'ltr',
+  size = 'default_L',
   onChange,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -35,7 +32,8 @@ export const SelectInputComponent: React.FC<SelectInputProps> = ({
     {
       [styles[`container_error`]]: error,
       [styles[`container_focus`]]: focus,
-      [styles[`input_diretion_${direction}`]]: direction,
+      [styles[`container_size_${size}`]]: size,
+      [styles[`container_diretion_${direction}`]]: direction,
     },
     className
   );
@@ -56,30 +54,6 @@ export const SelectInputComponent: React.FC<SelectInputProps> = ({
       },
     }),
     ...selectStyles,
-  };
-
-  const Indicator = (props: DropdownIndicatorProps) => {
-    const {
-      selectProps: { menuIsOpen },
-    } = props;
-
-    return (
-      <components.DropdownIndicator {...props}>
-        {props.isFocused || menuIsOpen ? iconOpen || (
-          <SvgIcon
-            src={IconsEnum.menuOpen}
-            size={12}
-            color={error ? 'error' : 'primary'}
-          />
-        ) : ( iconClosed ||
-          <SvgIcon
-            src={IconsEnum.menuClosed}
-            size={12}
-            color={'ultra-light-gray'}
-          />
-        )}
-      </components.DropdownIndicator>
-    );
   };
 
   useOnClickOutside(containerRef, () => setFocus(false));
@@ -103,7 +77,8 @@ export const SelectInputComponent: React.FC<SelectInputProps> = ({
           onChange && onChange(selectedOption.value)
         }
         components={{
-          DropdownIndicator: Indicator,
+          DropdownIndicator: (props) =>
+            Indicator({ ...props, iconClosed, iconOpen, error }),
           IndicatorSeparator: () => null,
         }}
       />

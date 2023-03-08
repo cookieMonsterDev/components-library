@@ -5,6 +5,10 @@
   flex-shrink: 0;
 
   &_rotate {
+    &_0 {
+      transform: rotate(0deg);
+    }
+
     &_90 {
       transform: rotate(90deg);
     }

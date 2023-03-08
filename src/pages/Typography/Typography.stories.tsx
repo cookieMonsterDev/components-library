@@ -6,6 +6,6 @@ export default {
   component: TypographyPage,
 } as ComponentMeta<typeof TypographyPage>;
 
-const Template: ComponentStory<typeof TypographyPage> = (args) => <TypographyPage />;
+const Template: ComponentStory<typeof TypographyPage> = () => <TypographyPage />;
 
 export const typography = Template.bind({});

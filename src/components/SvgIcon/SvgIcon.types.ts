@@ -4,7 +4,8 @@ export enum IconsEnum {
   hideShow = 'src/assets/icons/common/hideShow.svg',
   checkMark = 'src/assets/icons/common/checkMark.svg',
   menuClosed = 'src/assets/icons/common/menuClosed.svg',
-  menuOpen = 'src/assets/icons/common/menuOpen.svg'
+  menuOpen = 'src/assets/icons/common/menuOpen.svg',
+  calendar = 'src/assets/icons/common/calendar.svg'
 }
 
 export type SvgIconProps = {
@@ -12,7 +13,7 @@ export type SvgIconProps = {
   onClick?: (e: any) => void;
   size?: number;
   color?: colorType;
-  rotate?: '90' | '180' | '270';
+  rotate?: '0' | '90' | '180' | '270';
   className?: string;
   style?: React.CSSProperties;
   defaultStroke?: boolean;

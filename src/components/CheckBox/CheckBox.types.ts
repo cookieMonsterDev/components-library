@@ -1,21 +1,8 @@
-import { IconsEnum } from "@components/SvgIcon";
-
-export enum CheckBoxVariantEnum {
-  round = 'round',
-  square = 'square',
-  toggle = 'toggle',
-}
-
-export enum CheckBoxTypesEnum {
-  checkbox = 'checkbox',
-  radio = 'radio',
-}
-
 export type CheckBoxProps = {
   id?: string;
   name?: string;
-  type?: CheckBoxTypesEnum;
-  variant?: CheckBoxVariantEnum;
+  type?: "checkbox" | "radio";
+  variant?: "round" | "square" | "toggle"; 
   checkMarkIcon?: string;
   value?: any;
   checked?: boolean;

@@ -9,7 +9,6 @@
   position: relative;
   box-sizing: border-box;
   width: 328px;
-  height: 56px;
   padding: 1px;
   color: var(--black);
   border: 1px solid var(--light-gray);
@@ -39,6 +38,16 @@
       direction: ltr;
     }
   }
+
+  &_size {
+    &_default_L {
+      height: 56px;
+    }
+
+    &_default_M {
+      height: 40px;
+    }
+  }
 }
 
 .select {
@@ -50,6 +59,7 @@
     height: 100%;
     border: none;
     box-shadow: none;
+    background: transparent;
 
     &:hover {
       border: none;

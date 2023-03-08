@@ -21,5 +21,6 @@ const Template: ComponentStory<typeof Avatar> = (args: AvatarProps) => (
 export const avatar = Template.bind({});
 
 avatar.args = {
-  text: 'My Name'
+  text: 'My Name',
+  src: "https://sth"
 };

@@ -18,7 +18,6 @@ export const CheckBoxComponent: React.FC<CheckBoxProps> = ({
   onClick,
   onChange,
 }) => {
-  console.log(checkMarkIcon);
 
   const checkBoxClass = classNames(
     styles.checkBox,

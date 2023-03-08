@@ -84,6 +84,6 @@ export const dataSelect: SelectInputProps[] = [
     helperText: 'Виберіть дисерт до чаю!',
     options,
     error: true,
-    direction: 'ltr',
+    direction: 'rtl',
   },
 ];

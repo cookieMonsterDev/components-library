@@ -6,6 +6,6 @@ export default {
   component: CheckBoxesPage,
 } as ComponentMeta<typeof CheckBoxesPage>;
 
-const Template: ComponentStory<typeof CheckBoxesPage> = (args) => <CheckBoxesPage />;
+const Template: ComponentStory<typeof CheckBoxesPage> = () => <CheckBoxesPage />;
 
 export const CheckBoxes = Template.bind({});

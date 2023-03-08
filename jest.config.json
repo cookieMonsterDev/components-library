@@ -1,0 +1,13 @@
+{
+  "testEnvironment": "jsdom",
+  "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+  },
+  "setupFilesAfterEnv": [
+    "@testing-library/jest-dom/extend-expect"
+  ],
+  "moduleNameMapper": {
+    "^.+\\.module\\.(css|scss)$": "identity-obj-proxy", 
+    "^@components(.*)$": "<rootDir>/src/components$1"
+  }
+}

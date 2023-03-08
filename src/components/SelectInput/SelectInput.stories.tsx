@@ -1,4 +1,3 @@
-import { IconsEnum, SvgIcon } from '@components/SvgIcon';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SelectInput, SelectInputProps } from '.';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Text, TextVariantsEnum } from '@components/Text';
 import styles from './Typography.module.scss';
 import { data } from './FakeData';

@@ -2,8 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   CheckBox,
   CheckBoxProps,
-  CheckBoxVariantEnum,
-  CheckBoxTypesEnum,
 } from '.';
 
 export default {
@@ -35,6 +33,6 @@ checkBox.args = {
   id: 'test',
   name: 'check',
   defaultChecked: false,
-  variant: CheckBoxVariantEnum.round,
-  type: CheckBoxTypesEnum.checkbox,
+  variant: "round",
+  type: "checkbox",
 };

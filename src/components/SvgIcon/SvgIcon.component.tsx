@@ -10,7 +10,7 @@ export const SvgIconComponent: React.FC<SvgIconProps> = ({
   src,
   size = 24,
   color = 'inherit',
-  rotate,
+  rotate = '0',
   className,
   style,
   onClick,

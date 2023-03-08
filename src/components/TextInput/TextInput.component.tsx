@@ -13,6 +13,7 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
   placeholder,
   helperText,
   direction = 'ltr',
+  size = 'default_L',
   style,
   error = false,
   className,
@@ -29,6 +30,7 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
     {
       [styles[`input_focus`]]: focus,
       [styles[`input_active`]]: valueRef.current || focus || value,
+      [styles[`input_size_${size}`]]: size,
       [styles[`input_helperText`]]: helperText,
       [styles[`input_error`]]: error,
       [styles[`input_icon`]]: type === 'password',

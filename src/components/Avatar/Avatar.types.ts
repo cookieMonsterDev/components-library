@@ -1,6 +1,6 @@
 
 export type AvatarProps = {
-  text?: string;
+  text: string;
   size?: 'sm' | 'md' | 'lg';
   src?: string;
   alt?: string;

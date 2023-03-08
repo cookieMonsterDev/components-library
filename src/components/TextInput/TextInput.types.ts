@@ -4,6 +4,7 @@ export type TextInputProps = {
   value?: any;
   type?: 'text' | 'password';
   direction?: 'rtl' | 'ltr';
+  size?: 'default_L' | 'default_M';
   placeholder?: string;
   helperText?: string;
   error?: boolean;

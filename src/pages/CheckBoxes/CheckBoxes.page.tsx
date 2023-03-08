@@ -1,5 +1,4 @@
 import { CheckBox } from '@components/CheckBox';
-import React from 'react';
 import styles from './CheckBoxes.module.scss';
 import {
   fakeCheckBoxes,

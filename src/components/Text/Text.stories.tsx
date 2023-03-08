@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Text, TextProps, TextVariantsEnum } from '.';
+import { Text, TextProps } from '.';
 
 export default {
   title: 'Components/Text',
@@ -26,7 +26,7 @@ export default {
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (args: TextProps) => (
-  <Text {...args} />
+  <Text {...args}></Text>
 );
 
 export const text = Template.bind({});
