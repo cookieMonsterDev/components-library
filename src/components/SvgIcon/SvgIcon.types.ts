@@ -2,11 +2,13 @@ export enum IconsEnum {
   loader = 'src/assets/icons/common/loader.svg',
   search = 'src/assets/icons/common/search.svg',
   hideShow = 'src/assets/icons/common/hideShow.svg',
-  checkMark = 'src/assets/icons/common/checkMark.svg'
+  checkMark = 'src/assets/icons/common/checkMark.svg',
+  menuClosed = 'src/assets/icons/common/menuClosed.svg',
+  menuOpen = 'src/assets/icons/common/menuOpen.svg'
 }
 
 export type SvgIconProps = {
-  src: IconsEnum | string; // use string for icons from backend
+  src: IconsEnum | string;
   onClick?: (e: any) => void;
   size?: number;
   color?: colorType;

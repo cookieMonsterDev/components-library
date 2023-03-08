@@ -31,7 +31,6 @@ const Template: ComponentStory<typeof CheckBox> = (args: CheckBoxProps) => (
 
 export const checkBox = Template.bind({});
 
-checkBox.args = {};
 checkBox.args = {
   id: 'test',
   name: 'check',

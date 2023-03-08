@@ -5,10 +5,11 @@ export type TextInputProps = {
   type?: 'text' | 'password';
   direction?: 'rtl' | 'ltr';
   placeholder?: string;
-  errorText?: string;
+  helperText?: string;
+  error?: boolean;
   className?: string;
   style?: React.CSSProperties;
   icon?: React.ReactNode;
-  ref?: React.MutableRefObject<HTMLInputElement | null>
+  ref?: React.MutableRefObject<HTMLInputElement | null>;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | undefined;
 };

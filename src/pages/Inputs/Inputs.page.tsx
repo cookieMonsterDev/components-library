@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { data } from './InputsFakeData';
+import { dataInput, dataSelect } from './InputsFakeData';
 import styles from './Inputs.module.scss';
 import { TextInput } from '@components/TextInput';
 import { IconsEnum, SvgIcon } from '@components/SvgIcon';
+import { SelectInput } from '@components/SelectInput';
 
 export const InputsPage = () => {
   const [show, setShow] = useState(false);
@@ -10,7 +11,7 @@ export const InputsPage = () => {
   return (
     <div className="page_wrapper">
       <section className={styles.container}>
-        {data.map((e, i) => {
+        {dataInput.map((e, i) => {
           if (e.type === 'password') {
             return (
               <TextInput
@@ -31,6 +32,9 @@ export const InputsPage = () => {
 
           return <TextInput key={i} {...e} />;
         })}
+        {dataSelect.map((e) => (
+          <SelectInput key={e.id} {...e} />
+        ))}
       </section>
     </div>
   );

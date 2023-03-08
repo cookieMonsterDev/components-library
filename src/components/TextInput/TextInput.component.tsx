@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './TextInput.module.scss';
 import { TextInputProps } from './TextInput.types';
 import { Text, TextVariantsEnum } from '@components/Text';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 export const TextInputComponent: React.FC<TextInputProps> = ({
   id,
@@ -10,9 +11,10 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
   value,
   type = 'text',
   placeholder,
-  errorText,
+  helperText,
   direction = 'ltr',
   style,
+  error = false,
   className,
   icon,
   ref,
@@ -27,7 +29,8 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
     {
       [styles[`input_focus`]]: focus,
       [styles[`input_active`]]: valueRef.current || focus || value,
-      [styles[`input_error`]]: errorText,
+      [styles[`input_helperText`]]: helperText,
+      [styles[`input_error`]]: error,
       [styles[`input_icon`]]: type === 'password',
       [styles[`input_diretion_${direction}`]]: direction,
     },
@@ -39,33 +42,13 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
     onChange && onChange(event);
   };
 
-  const handleClickInside = () => setFocus(true);
-
-  const handleClickOutside = () => setFocus(false);
-
-  useEffect(() => {
-    const listener = (event: Event) => {
-      const el = containerRef?.current;
-      if (!el || el.contains((event?.target as Node) || null)) {
-        return;
-      }
-      handleClickOutside();
-    };
-
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
-
-    return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
-    };
-  }, [containerRef, handleClickOutside]);
+  useOnClickOutside(containerRef, () => setFocus(false))
 
   return (
     <div
       className={InputClass}
       style={style}
-      onClick={handleClickInside}
+      onClick={() => setFocus(true)}
       ref={containerRef}
     >
       <input
@@ -82,9 +65,9 @@ export const TextInputComponent: React.FC<TextInputProps> = ({
           <Text variant={TextVariantsEnum.Body_L}>{placeholder}</Text>
         </label>
       )}
-      {errorText && (
-        <label className={styles.errorText}>
-          <Text variant={TextVariantsEnum.Caption}>{placeholder}</Text>
+      {helperText && (
+        <label className={styles.helperText}>
+          <Text variant={TextVariantsEnum.Caption}>{helperText}</Text>
         </label>
       )}
     </div>
