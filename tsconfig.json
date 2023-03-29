@@ -18,7 +18,8 @@
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
       "@components/*": ["./src/components/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@layouts/*": ["./src/layouts/*"]
     }
   },
   "include": ["src"],

@@ -1,0 +1,50 @@
+.container {
+  width: 428px;
+  padding: 34px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: appearance 700ms ease-out;
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.title {
+  justify-self: center;
+  text-align: center;
+  margin: 9px 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 9px 0;
+}
+
+.closeButton {
+  position: absolute;
+  inset: 15px 15px auto auto;
+  
+  svg {
+    cursor: pointer;
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

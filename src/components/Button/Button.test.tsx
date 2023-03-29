@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen  } from '@testing-library/react';
 import { Button, ButtonVariantEnum } from '.';
 
 describe('Button component tests', () => {

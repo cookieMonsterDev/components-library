@@ -22,6 +22,7 @@ module.exports = {
       ...config.resolve.alias,
       '@components': path.resolve(__dirname, '../src/components'),
       '@pages': path.resolve(__dirname, '../src/pages'),
+      '@layouts': path.resolve(__dirname, '../src/layouts'),
     };
 
     return config;

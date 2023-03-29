@@ -5,7 +5,10 @@ export enum IconsEnum {
   checkMark = 'src/assets/icons/common/checkMark.svg',
   menuClosed = 'src/assets/icons/common/menuClosed.svg',
   menuOpen = 'src/assets/icons/common/menuOpen.svg',
-  calendar = 'src/assets/icons/common/calendar.svg'
+  calendar = 'src/assets/icons/common/calendar.svg',
+  warningAlert = 'src/assets/icons/common/warningAlert.svg',
+  errorAlert = 'src/assets/icons/common/errorAlert.svg',
+  closeButton = 'src/assets/icons/common/closeButton.svg',
 }
 
 export type SvgIconProps = {

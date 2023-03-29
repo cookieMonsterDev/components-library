@@ -69,6 +69,7 @@ export const SelectInputComponent: React.FC<SelectInputProps> = ({
         id={id}
         name={name}
         className={styles.select}
+        data-testid="select"
         options={options}
         defaultValue={defaultValue}
         placeholder={<label className={styles.label}>{placeholder}</label>}

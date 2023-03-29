@@ -11,6 +11,7 @@ export default defineConfig({
     alias: [
       { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
       { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
+      { find: '@layouts', replacement: path.resolve(__dirname, 'src/layouts') },
     ],
   },
 });

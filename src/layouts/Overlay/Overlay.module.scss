@@ -1,0 +1,6 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
