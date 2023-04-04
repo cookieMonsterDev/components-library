@@ -8,6 +8,7 @@
   ],
   "moduleNameMapper": {
     "^.+\\.module\\.(css|scss)$": "identity-obj-proxy", 
-    "^@components(.*)$": "<rootDir>/src/components$1"
+    "^@components(.*)$": "<rootDir>/src/components$1",
+    "^@layouts(.*)$": "<rootDir>/src/layouts$1"
   }
 }

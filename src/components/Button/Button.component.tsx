@@ -41,6 +41,7 @@ export const ButtonComponent: React.FC<ButtonProps> = ({
       style={style}
       type={type}
       id={id}
+      role="button"
     >
       <div className={styles.loader}>
         <SvgIcon src={IconsEnum.loader} size={30} />

@@ -8,6 +8,8 @@ export enum IconsEnum {
   calendar = 'src/assets/icons/common/calendar.svg',
   warningAlert = 'src/assets/icons/common/warningAlert.svg',
   errorAlert = 'src/assets/icons/common/errorAlert.svg',
+  successAlert = 'src/assets/icons/common/successAlert.svg',
+  changeAlert = 'src/assets/icons/common/changeAlert.svg',
   closeButton = 'src/assets/icons/common/closeButton.svg',
 }
 
@@ -20,6 +22,7 @@ export type SvgIconProps = {
   className?: string;
   style?: React.CSSProperties;
   defaultStroke?: boolean;
+  role?: string;
 };
 
 export type colorType =

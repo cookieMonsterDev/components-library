@@ -8,6 +8,7 @@ export const TextComponent: React.FC<TextProps> = ({
   children,
   className,
   style,
+  title,
 }) => {
   const tag = TagVariantsEnum[variant as keyof typeof TagVariantsEnum];
 
@@ -19,5 +20,5 @@ export const TextComponent: React.FC<TextProps> = ({
     className
   );
 
-  return createElement(tag, { className: TextClassName, style }, children);
+  return createElement(tag, { className: TextClassName, style, title }, children);
 };

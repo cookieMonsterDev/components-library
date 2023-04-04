@@ -15,6 +15,7 @@ export const SvgIconComponent: React.FC<SvgIconProps> = ({
   style,
   onClick,
   defaultStroke,
+  role = 'button'
 }) => {
   const svgIconClass = classNames(
     styles.svgIcon,
@@ -44,6 +45,7 @@ export const SvgIconComponent: React.FC<SvgIconProps> = ({
       className={svgIconClass}
       style={customStyles}
       onClick={onClick}
+      role={role}
     />
   );
 };

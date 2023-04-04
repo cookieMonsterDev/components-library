@@ -30,15 +30,16 @@ export const AlertPopUpComponent: React.FC<AlertPopUpProps> = ({
   return (
     <Overlay>
       <Dialog className={styles.container}>
-        <span className={styles.closeButton}>
+        {closeButtonHandler && <span className={styles.closeButton}>
           <SvgIcon
             src={IconsEnum.closeButton}
             color="ultra-light-gray"
-            onClick={closeButtonHandler && closeButtonHandler}
+            onClick={closeButtonHandler}
+            role="closebutton"
           />
-        </span>
+        </span>}
         <span className={styles.icon}>
-          <SvgIcon src={icon(variant)} color={variant} size={48} />
+          <SvgIcon src={icon(variant)} color={variant} role="icon" size={48} />
         </span>
         {title && (
           <Text className={styles.title} variant={TextVariantsEnum.Heading_2}>

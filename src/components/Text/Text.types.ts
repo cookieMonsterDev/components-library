@@ -27,6 +27,7 @@ export enum TagVariantsEnum {
 export type TextProps = {
   variant?: TextVariantsEnum;
   children?: React.ReactNode;
+  title?: string;
   className?: string;
   style?: React.CSSProperties;
 };
